@@ -48,6 +48,15 @@
               </select>
              </div>
 
+
+             <div class="form-group">
+             <label for="adPrice">Precio</label>
+             <input type="number" step="0.01" class="form-control" id="adPrice" aria-describedby="priceHelp" name="price" value="{{old("price")}}">
+             @error('price')
+            <small id="priceHelp" class="form-text" style="color:red;">{{ $message }}</small>
+            @enderror
+            </div>
+
                </div>
                <button type="submit" class="btn btn-primary">Submit</button>
               </form>
