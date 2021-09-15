@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Requests\AdRequest;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -24,3 +25,7 @@ Route::get('/ad/new', [HomeController::class,'newAd'])->name('ad.new');
 Route::post('/ad/create', [HomeController::class,'createAd'])->name('ad.create');
 
 Route::get('/', [PublicController::class,'index'])->name('home');
+
+Route::get('/category/{name}/{id}/ads', [PublicController::class,'adsByCategory'])->name('category.ads');
+
+Route::get('/ad/{id}', [HomeController::class,'details'])->name("ad.details");

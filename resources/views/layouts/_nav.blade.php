@@ -11,20 +11,21 @@
             Menu
             <i class="fas fa-bars"></i>
         </button>
+       
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown py-2">
-                    <a id="navbarDropdown"
-                        class=" nav-link text-lowercase dropdown-toggle text-decoration-none text-reset" href="#"
-                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <span>Categorias</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item text-decoration-none text-reset"
-                            href="#">
-                        </a>
-                    </div>
-                </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorias
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              @foreach ($categories as $category)
+              <li><a class="dropdown-item" href="{{route('category.ads',['name'=>$category->name,'id'=>$category->id])}}">{{$category->name}}</a></li>
+              <li><hr class="dropdown-divider"></li>
+              @endforeach
+            </ul>
+          </li>
+
                 @guest
                 @if (Route::has('login'))
                 <li class="nav-item mx-0 mx-lg-1 ">
@@ -53,6 +54,10 @@
                   Nuevo Anuncio
                   </a>
                 </li>
+
+          
+
+                
  @endguest
     </ul>
         </div>

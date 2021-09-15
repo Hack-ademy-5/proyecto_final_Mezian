@@ -47,5 +47,15 @@ public function createAd (AdRequest $request)
     return redirect()->route('home')->with('ad.create.success','Anuncio creado con exito');
 }
 
+
+
+public function details($id) 
+{
+    $add = Ad::findOrFail($id);
+    return view("ad.details",["ad"=> $ad]);
+}
+
+
+
 }
 
