@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Ad;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\AdRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
 
@@ -42,6 +42,7 @@ public function createAd (AdRequest $request)
     $a->body = $request->input('body');
     $a->category_id = $request->input('category');
     $a->price = $request->input('price');
+    $a->user_id = Auth::id();
     $a->save();
     return redirect()->route('home')->with('ad.create.success','Anuncio creado con exito');
 }

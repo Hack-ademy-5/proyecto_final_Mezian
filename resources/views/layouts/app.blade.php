@@ -16,6 +16,10 @@
 <body>
     <div id="app">
         @include('layouts._nav')
+        @if(session('ad.create.success'))
+    <div class="alert alert-success">{{session('ad.create.success')}}</div>
+        @endif
+
         <main class="container py-4">
             @yield('content')
         </main>

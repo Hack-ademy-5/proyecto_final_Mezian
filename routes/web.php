@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Requests\AdRequest;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Requests\AdRequest;
+use App\Http\Controllers\PublicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/ad/new', [HomeController::class,'newAd'])->name('ad.new');
 
 Route::post('/ad/create', [HomeController::class,'createAd'])->name('ad.create');
+
+Route::get('/', [PublicController::class,'index'])->name('home');
