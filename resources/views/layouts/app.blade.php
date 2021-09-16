@@ -12,6 +12,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <!-- Styles -->
 <link rel="stylesheet" href="{{mix('css/app.css')}}">
+
+
+
 </head>
 <body>
     <div id="app">

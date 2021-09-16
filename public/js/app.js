@@ -5239,11 +5239,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: true
 // });
 
-try {
-  __webpack_require__(/*! @popperjs/core */ "./node_modules/@popperjs/core/lib/index.js");
-
-  __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
-} catch (e) {}
+__webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 
 /***/ }),
 

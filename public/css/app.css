@@ -11269,3 +11269,20 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  background-color: white;
+}
+
+.card {
+  border-color: black;
+  border-width: 3px;
+  background-color: #bbe5f8;
+}
+
+.navbar-dark {
+  background-color: #9de0ff;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #000;
+}

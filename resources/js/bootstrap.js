@@ -28,7 +28,5 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // });
 
 
-try {
-    require('@popperjs/core');
+
     require('bootstrap');
-} catch (e) {}
