@@ -3,9 +3,10 @@
 @section('content')
 
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-md-8 d-flex flex-column align-items-center">
+<div class="container-fluid align-items-center text-center">
+    <div class="row mb-5 pb-5">
+        <div class="col-12">
+        <div class="d-flex flex-column align-items-center ">
             <div class="form-content">
                 <!--FORM TITLE -->
                 <div class="section-title">
@@ -38,24 +39,20 @@
                         <div class="validate"></div>
                     </div>
                     <!--Button-Login-->
-                    <button type="submit" class=" form-button-edit text-center space-around my-2">
+                    <button type="submit" class="btn btn-dark text-center space-around my-2">
                         Log-In
                     </button>
                 </form>
             </div>
-            <div class="div form-link d-flex mt-4 ms-5 ps-5 ">
-                <p class="text-white">¿You dont have an account? </p>
+            <div class="div form-link d-flex ">
+                <p class="text">Dont have an account? </p>
                 <a class="text-reset text-decoration-none ms-2" href="{{route('register')}}"><u> Register here</u></a>
             </div>
         </div>
-        <div class="col-12 col-md-4">
-            <img src="./media/bg-login.svg" alt="">
-        </div>
+        
     </div>
 </div>
-<div class="col-12 col-md-4 mt-5 pt-5">
-    <p class="text-medium ">LOGIN</p>
-</div>
+
 </div>
 </div>
 @endsection

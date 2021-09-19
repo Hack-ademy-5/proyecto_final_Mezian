@@ -37,7 +37,7 @@
                @enderror
                 
 
-            <div class="form-group text-bold me-5  ms-5">
+            <div class="form-group ">
             <label for="form-label" class="my-2">Categorias</label>
             <select class="form-control" id="categories" name="category">
             @foreach($categories ?? '' as $category)
@@ -50,15 +50,16 @@
 
 
              <div class="form-group">
-             <label for="adPrice">Precio</label>
-             <input type="number" step="0.01" class="form-control" id="adPrice" aria-describedby="priceHelp" name="price" value="{{old("price")}}">
+             <label for="adPrice" >Precio</label>
+             <input  step="0.01" class="form-control my-3" id="adPrice" aria-describedby="priceHelp" name="price" value="{{old("price")}}">
              @error('price')
             <small id="priceHelp" class="form-text" style="color:red;">{{ $message }}</small>
             @enderror
             </div>
 
                </div>
-               <button type="submit" class="btn btn-primary">Submit</button>
+               <button type="submit" class="btn btn-dark btn-primary">Submit</button>
+               </div>
               </form>
                 </div>
             </div>

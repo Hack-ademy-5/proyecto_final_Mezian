@@ -4,11 +4,16 @@
 
 
 
-<div class="container my-5">
-<div class="row">
-    <div class="col-12 col-md-6 offset-md-3">
+<div class="container my-5 ">
+   <div class="row ">
+    <div class="col-12 col-md-6 offset-md-3 text-center ">
         <h1>{{__('ui.welcome')}}</h1>
-        @foreach($ads as $ad)
+    <div>
+  </div>
+       
+  <div class="row align-items-center">
+    <div class="col-12">
+    @foreach($ads as $ad)
         <div class="card mb-5" style="width: 18rem;">
             <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
             <div class="card-body">
@@ -21,11 +26,17 @@
 
                           {{ $ad->user->name }}     </i></h6>
               <a href="#" class="card-link">Link</a>
-            </div>
+            
           </div>
           @endforeach
     </div>
-</div>
+    
+    </div>
+    
+
 </div>
 
 @endsection
+
+
+ 

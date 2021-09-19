@@ -3,9 +3,9 @@
 @section('content')
 
 
-<div class="container-fluid bg-accent vh-100">
+<div class="container-fluid bg-accent vh-100 text-center">
        <div class="row mb-5 pb-5">
-            <div class="col-12 col-md-8 ms-5">
+            <div class="col-12">
                 <div class="d-flex flex-column align-items-center ">
                 <div class="form-content justify-content-center mb-5 pb-5">
                     <!--FORM TITLE -->
@@ -51,19 +51,21 @@
                             <div class="validate"></div>
                         </div>
                         <!--Button-Register-->
-                        <button type="submit" class=" form-button-edit text-center space-around my-2">
+                        <button type="submit" class=" btn btn-dark text-center space-around my-2">
                             Register
                         </button>
                     </form>
-                </div>
-                <div class="form-link mt-4 d-flex">
-                <p class="text-white">You dont have an account</p>
+
+                    <div class="form-link mt-4 d-flex">
+                <p class="text">Have an account?</p>
                 <a class="text-reset text-decoration-none ps-2" href="{{route('login')}}"><u>Login here</u></a>
                 </div>
+                
+                </div>
+
+                
             </div>
-            <div class="col-12 col-md-4">
-               <p>lorem</p>
-            </div>
+            
         </div>
     </div>
 </section>
