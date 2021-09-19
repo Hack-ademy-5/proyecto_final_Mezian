@@ -52,6 +52,20 @@
                   </a>
                 </li>
 
+
+             @auth
+            @if (Auth::user()->is_revisor)
+            <li class="nav-item">
+            <a class="nav-link" href="{{ route('revisor') }}">
+             Revisor Casa
+            <span class="badge rounded-pill bg-danger">
+            {{\App\Models\Ad::ToBeRevisionedCount() }}
+            </span>
+            </a>
+           </li>
+           @endif
+           @endauth
+
           
 
                 

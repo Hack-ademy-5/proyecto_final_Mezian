@@ -10,15 +10,18 @@ class PublicController extends Controller
     
     public function index()
    {
-    
-    $ads = Ad::orderBy('created_at','desc')->take(5)->get();
-    return view('home',compact('ads'));
+     $ads = Ad::where('is_accepted', true)
+        ->orderBy('created_at', 'desc')
+        ->take(5)
+        ->get();
+    return view('home', compact('ads'));
    }
 
 
     public function adsByCategory($name, $category_id){
     $category = Category::find($category_id);
     $ads = $category->ads()
+    ->where('is_accepted', true)
     ->orderBy('created_at','desc')
     ->paginate(5);
    
