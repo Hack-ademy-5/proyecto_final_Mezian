@@ -1,4 +1,8 @@
 
+@include('layouts._locale',["lang"=>'es','nation'=>'es'])  
+@include('layouts._locale',["lang"=>'en','nation'=>'gb'])  
+@include('layouts._locale',["lang"=>'it','nation'=>'it'])  
+
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
@@ -67,6 +71,24 @@
            @endauth
 
           
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <span class="flag-icon flag-icon-es"></span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <span class="flag-icon flag-icon-gb"></span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <span class="flag-icon flag-icon-it"></span>
+                </a>
+            </li>
+
 
                 
  @endguest

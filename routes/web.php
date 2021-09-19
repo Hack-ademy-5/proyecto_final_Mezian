@@ -36,3 +36,5 @@ Route::get('/revisor',[RevisorController::class,'index'] )->name('revisor');
 
 Route::post('/revisor/ad/{id}/accept',[RevisorController::class,'accept'])->name('revisor.ad.accept');
 Route::post('/revisor/ad/{id}/reject',[RevisorController::class,'reject'])->name('revisor.ad.reject');
+
+Route::post('/locale/{locale}', [PublicController::class,'locale'])->name('locale');

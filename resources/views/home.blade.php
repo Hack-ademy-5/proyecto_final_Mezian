@@ -7,7 +7,7 @@
 <div class="container my-5">
 <div class="row">
     <div class="col-12 col-md-6 offset-md-3">
-        <h1>Bienvenidos a Rápido.es</h1>
+        <h1>{{__('ui.welcome')}}</h1>
         @foreach($ads as $ad)
         <div class="card mb-5" style="width: 18rem;">
             <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
