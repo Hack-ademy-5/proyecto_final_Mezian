@@ -5,6 +5,7 @@ use App\Http\Requests\AdRequest;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,5 @@ Route::get('/', [PublicController::class,'index'])->name('home');
 Route::get('/category/{name}/{id}/ads', [PublicController::class,'adsByCategory'])->name('category.ads');
 
 Route::get('/ad/{id}', [HomeController::class,'details'])->name("ad.details");
+
+Route::get('/revisor',[RevisorController::class,'index'] )->name('revisor.home');
