@@ -12,7 +12,7 @@ class PublicController extends Controller
    {
      $ads = Ad::where('is_accepted', true)
         ->orderBy('created_at', 'desc')
-        ->take(5)
+        ->take(6)
         ->get();
     return view('home', compact('ads'));
    }
@@ -23,7 +23,7 @@ class PublicController extends Controller
     $ads = $category->ads()
     ->where('is_accepted', true)
     ->orderBy('created_at','desc')
-    ->paginate(5);
+    ->paginate(6);
    
     return view('ads', compact ('category', 'ads'));
    }

@@ -49,6 +49,8 @@
                 const form = document.getElementById('logoutForm').submit();
             });
         }
+
+        
  </script>
 
 </body>
