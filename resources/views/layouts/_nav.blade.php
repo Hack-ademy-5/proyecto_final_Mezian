@@ -32,7 +32,7 @@
         
 
         <li class="nav-item">
-        <a class="nav-link" href="{{ route('ad.new') }}">Nuevo Anuncio</a>
+        <a class="nav-link" href="{{ route('ad.new') }}">{{__('ui.upload')}}</a>
         </li>
 
 
@@ -68,7 +68,7 @@
         <form id="logoutForm" action="{{route('logout')}}" method="POST">
              @csrf
          </form>
-          <a id="logoutBtn" class= "nav-link"  href="#">Logout</a>
+          <a id="logoutBtn" class= "nav-link"  href="#">{{__('ui.logout')}}</a>
         </li>
 
     

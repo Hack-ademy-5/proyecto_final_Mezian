@@ -20,7 +20,7 @@
                             <h6 class="card-subtitle1 mb-2 text-muted">{{$ad->price}} €</h6>
                             <p class="card-text"> {{$ad->body}}</p>
                             <h6 class="card-subtitle mb-2">
-                                Categoria: <a
+                            {{__('ui.categoria')}}: <a
                                         href="{{route('category.ads',['name'=>$ad->category->name,'id'=>$ad->category->id])}}">{{$ad->category->name}}</a> <br><br>
                                 <i>{{$ad->created_at->format('d/m/Y')}} -
 

@@ -10,7 +10,7 @@
                 <div class="form-content justify-content-center mb-5 pb-5">
                     <!--FORM TITLE -->
                     <div class="section-title">
-                        <h2 class="form-title space-around">REGISTER
+                        <h2 class="form-title space-around">{{__('ui.register')}}
                             <!-- <span> Rapido.es</span> -->
                         </h2>
                         <!-- <p>Ut possimus qui ut temporibus culpa velit autem.</p> -->
@@ -29,36 +29,36 @@
                         @csrf
                         <!--Name -->
                         <div class="form-field-edit form-field space-around my-2">
-                          <input type="text" name="name" id="name" class="form-control forms_field-input" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                          <input type="text" name="name" id="name" class="form-control forms_field-input" placeholder="{{__('ui.name')}}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                           <div class="validate"></div>
                         </div>
                         <!--Email -->
                         <div class="form-field-edit form-field space-around my-2">
                             <input type="email" name="email" id="email" class="form-control forms_field-input"
-                                placeholder="Your Email" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                                placeholder="{{__('ui.email')}}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                             <div class="validate"></div>
                         </div>
                         <!--Password -->
                         <div class="form-field-edit form-field space-around my-2">
                             <input type="password" name="password" id="password" class="form-control forms_field-input"
-                                placeholder="Your Password">
+                                placeholder="{{__('ui.password')}}">
                             <div class="validate"></div>
                         </div>
                          <!--Password Confirmation -->
                          <div class="form-field-edit form-field space-around my-2">
                             <input type="password" name="password_confirmation" id="password" class="form-control forms_field-input"
-                                placeholder="Your Password">
+                                placeholder="{{__('ui.password')}}">
                             <div class="validate"></div>
                         </div>
                         <!--Button-Register-->
                         <button type="submit" class=" btn btn-dark text-center space-around my-2">
-                            Register
+                        {{__('ui.register')}}
                         </button>
                     </form>
 
                     <div class="form-link mt-4 d-flex">
-                <p class="text">Have an account?</p>
-                <a class="text-reset text-decoration-none ps-2" href="{{route('login')}}"><u>Login here</u></a>
+                <p class="text">{{__('ui.register-msg')}}</p>
+                <a class="text-reset text-decoration-none ps-2" href="{{route('login')}}"><u>{{__('ui.log-in')}}</u></a>
                 </div>
                 
                 </div>
