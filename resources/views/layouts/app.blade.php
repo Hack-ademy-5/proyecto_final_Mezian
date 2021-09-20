@@ -10,8 +10,13 @@
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300&family=Oswald:wght@300&display=swap" rel="stylesheet"> 
     <!-- Styles -->
 <link rel="stylesheet" href="{{mix('css/app.css')}}">
+
+
 
 
 
@@ -28,7 +33,7 @@
     <div class="alert alert-success">{{session('ad.create.success')}}</div>
         @endif
 
-        <main class="container py-4">
+        <main class="container-fluid py-4">
             @yield('content')
         </main>
         </div>

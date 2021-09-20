@@ -5,7 +5,7 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light1">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ route('home') }}">Proyectofinal.es</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,7 +16,7 @@
         
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categorias
+          {{__('ui.categoria')}}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           @foreach ($categories as $category)
@@ -40,7 +40,6 @@
       
         @include('layouts._locale',["lang"=>'es','nation'=>'es'])  
             
-
         @include('layouts._locale',["lang"=>'en','nation'=>'gb'])  
 
         @include('layouts._locale',["lang"=>'it','nation'=>'it'])
@@ -53,14 +52,14 @@
         @guest
          @if (Route::has('login'))
         <li class="nav-item">
-          <a class="nav-link" href="{{route('login')}}"><span>Login</span></a>
+          <a class="nav-link" href="{{route('login')}}"><span>{{__('ui.login')}}</span></a>
         </li>
          @endif
          
          
         @if (Route::has('register'))
         <li class="nav-item">
-        <a class="nav-link" href="{{route('register')}}"><span>Register</span></a>
+        <a class="nav-link" href="{{route('register')}}"><span>{{__('ui.register')}}</span></a>
         </li>
         @endif
         @else
