@@ -10,9 +10,7 @@
           </div>
 
             <div class="row ">
-              
-                @include('ad._ad')
-                
+              @include('ad._ad')
              <div>
 
 
