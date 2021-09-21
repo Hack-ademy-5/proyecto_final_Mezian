@@ -29,7 +29,7 @@ Route::get('/', [PublicController::class,'index'])->name('home');
 
 Route::get('/category/{name}/{id}/ads', [PublicController::class,'adsByCategory'])->name('category.ads');
 
-Route::get('/ad/{id}', [HomeController::class,'details'])->name("ad.details");
+
 
 Route::get('/revisor',[RevisorController::class,'index'] )->name('revisor');
 
@@ -38,3 +38,11 @@ Route::post('/revisor/ad/{id}/accept',[RevisorController::class,'accept'])->name
 Route::post('/revisor/ad/{id}/reject',[RevisorController::class,'reject'])->name('revisor.ad.reject');
 
 Route::post('/locale/{locale}', [PublicController::class,'locale'])->name('locale');
+
+Route::post('/ad/images/upload', [HomeController::class,'uploadImages'])->name('ad.images.upload');
+
+Route::delete('/ad/images/remove', [HomeController::class,'removeImages'])->name('ad.images.remove');
+
+Route::get('/ad/images', [HomeController::class,'getImages'])->name('ad.images');
+
+Route::get('/ad/{id}', [HomeController::class,'details'])->name("ad.details");

@@ -38,25 +38,36 @@
                         </div>
                     </div>
                     <hr>
+                    @foreach ($ad->images as $image)
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h3>Imagen</h3>
+                        </div>
+                        <div class="col-md-9">
+                        <img src="{{ Storage::url($image->file) }}" class="img-fluid" alt="" >
+                        </div>
+                    </div>
+                    @endforeach
+                    <hr>
                     <div class="row d-flex justify-content-end">
-        <div class="col-md-6">
-            <form action="{{route('revisor.ad.reject',['id'=>$ad->id])}}" method="POST">
-                @csrf
-                <button type="submit" class="btn btn-danger">Rechazar</button>
-            </form>
-        </div>
-        <div class="col-md-6 text-right">
-            <form action="{{route('revisor.ad.accept',['id'=>$ad->id])}}" method="POST">
-                @csrf
-                <button type="submit" class="btn btn-success">Aceptar</button>
-            </form>
-        </div>
-    </div>
+                        <div class="col-md-6">
+                            <form action="{{route('revisor.ad.reject',['id'=>$ad->id])}}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Rechazar</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <form action="{{route('revisor.ad.accept',['id'=>$ad->id])}}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-success">Aceptar</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
 </div>
 
 @else

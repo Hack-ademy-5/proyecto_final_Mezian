@@ -28,6 +28,7 @@ class AdRequest extends FormRequest
        'title'=>'required|string|max:120',
        'body'=>'required|string|max:500',
        'price'=>'required|numeric|max:9999999999999.99',
+       
         ];
     }
 }

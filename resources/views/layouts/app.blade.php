@@ -41,6 +41,7 @@
 <script src="{{mix('js/app.js')}}"></script>
 
 
+
 <script>
         const logout = document.getElementById('logoutBtn');
         if (logout) {
