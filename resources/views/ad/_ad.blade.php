@@ -1,3 +1,4 @@
+use id;
 <div class="row ">
     @foreach($ads as $ad)
     <div class="col-12 col-md-4 my-5 d-flex justify-content-around container-fluid">

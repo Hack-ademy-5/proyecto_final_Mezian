@@ -51,7 +51,7 @@ public function createAd (AdRequest $request)
 
 public function details($id) 
 {
-    $add = Ad::findOrFail($id);
+    $ad = Ad::findOrFail($id);
     return view("ad.details",["ad"=> $ad]);
 }
 
