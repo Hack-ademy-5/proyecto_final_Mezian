@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Ad;
 use App\Models\AdImage;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use Illuminate\Http\Request;
 use App\Http\Requests\AdRequest;
 use Illuminate\Support\Facades\Auth;
@@ -67,6 +68,14 @@ public function createAd (AdRequest $request)
         $fileName = basename($image);
         $newFilePath = "public/ads/{$a->id}/{$fileName}";
         Storage::move($image,$newFilePath);
+
+        dispatch(new ResizeImage(
+          $newFilePath,
+          300,
+          150
+      ));
+
+
         $i->file = $newFilePath;
         $i->ad_id = $a->id;
         $i->save();
@@ -131,6 +140,7 @@ public function getImages(Request $request){
       }
       return response()->json($data);
   }
+
 
 }
 
