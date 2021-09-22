@@ -34,6 +34,15 @@
                             <h3>Descripción</h3>
                         </div>
                         <div class="col-md-9">
+                            {{$ad->description}}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h3>Anuncio</h3>
+                        </div>
+                        <div class="col-md-9">
                             {{$ad->body}}
                         </div>
                     </div>
