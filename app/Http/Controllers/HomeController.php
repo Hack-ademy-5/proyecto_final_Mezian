@@ -1,4 +1,4 @@
-<?php
+<?php //php artisan queue:work 
 
 namespace App\Http\Controllers;
 use App\Models\Ad;
@@ -100,12 +100,13 @@ public function uploadImages(Request $request)
     
   $uniqueSecret = $request->input('uniqueSecret');
   $filePath = $request->file('file')->store("public/temp/{$uniqueSecret}");
-  
-   session()->push("images.{$uniqueSecret}", $filePath);
+  dispatch(new ResizeImage($filePath,120,120));
+  session()->push("images.{$uniqueSecret}", $filePath);
    
    return response()->json(
     [
         'id'=> $filePath
+        
     ]
 
 );
@@ -124,7 +125,7 @@ public function removeImages(Request $request)
 
 
 public function getImages(Request $request){
-      $uniqueSecret = $secret->input('uniqueSecret');
+      $uniqueSecret = $request->input('uniqueSecret');
       $images = session()->get("images.{$uniqueSecret}", []);
       $removedImages = session()->get("removedImages.{$uniqueSecret}",[]);
       $images = array_diff($images, $removedImages);
@@ -133,7 +134,7 @@ public function getImages(Request $request){
           $data[] = [
               'id' => $image,
               'name' => basename($image),
-              'src' => Storage::url($image),
+              'src' => AdImage::getUrlByFilePath($image, 120, 120),
               'size'=> Storage::size($image)
           ];
          

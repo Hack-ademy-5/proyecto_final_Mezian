@@ -44,7 +44,7 @@
                             <h3>Imagen</h3>
                         </div>
                         <div class="col-md-9">
-                        <img src="{{ Storage::url($image->file) }}" class="img-fluid" alt="" >
+                        <img src="{{ $image->getUrl(300,150)}}" class="img-fluid" alt="" >
                         </div>
                     </div>
                     @endforeach
