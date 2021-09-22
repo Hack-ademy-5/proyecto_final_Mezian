@@ -17,7 +17,7 @@ class CreateAdsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('body');
-            $table->string('description');
+            $table->string('description');//mirar como añadir tabla 
             $table->timestamps();
         });
     }
