@@ -38,11 +38,12 @@
                         </div>
                     </div>
                     <hr>
+                    <div class="col-md-3">
+                        <h3>Imagen</h3>
+                    </div>
                     @foreach ($ad->images as $image)
-                    <div class="row">
-                        <div class="col-md-3">
-                            <h3>Imagen</h3>
-                        </div>
+                    <div class="row justify-content-around">
+                        
                         <div class="col-md-9">
                         <img src="{{ $image->getUrl(300,150)}}" class="img-fluid" alt="" >
                         </div>

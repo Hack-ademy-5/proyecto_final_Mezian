@@ -4,6 +4,7 @@
     <div class="col-12 col-md-4 my-5 d-flex justify-content-around container-fluid">
 
         <div class="card" style="width: 18rem;">
+        
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
 
@@ -13,7 +14,7 @@
                     </div>
                     @endforeach
                 </div>
-
+                    
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
