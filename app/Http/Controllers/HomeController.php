@@ -51,7 +51,7 @@ public function createAd (AdRequest $request)
     $a->title = $request->input('title');
     $a->body = $request->input('body');
     $a->category_id = $request->input('category');
-    
+    $a->description = $request->input('description');
     $a->price = $request->input('price');
     $a->user_id = Auth::id();
     $a->save();

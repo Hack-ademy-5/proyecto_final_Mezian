@@ -30,7 +30,7 @@
             <div class="card-body">
                 <h5 class="card-title"> {{$ad->title}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">{{$ad->price}} €</h6>
-                <p class="card-text"> {{$ad->body}}</p>
+                <p class="card-text"> {{$ad->description}}</p>
                 <h6 class="card-subtitle mb-2">
                     {{__('ui.categoria')}}: <a
                                         href="{{route('category.ads',['name'=>$ad->category->name,'id'=>$ad->category->id])}}">{{$ad->category->name}}</a> <br><br>

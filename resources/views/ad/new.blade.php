@@ -26,6 +26,19 @@
                             @enderror
 
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="adDescription">descripcion</label>
+                            <textarea placeholder="200 max" class="form-control" name="description" id="adDescription" 
+                                rows="1">{{old("description")}}</textarea>
+
+                            @error('description')
+                            <small id="emailHelp" class="form-text" style="color:red;">
+                                {{ $message }}
+                            </small>
+                            @enderror
+
+
                         <div class="form-group">
                             <label for="adBody">Anuncio</label>
                             <textarea class="form-control" name="body" id="adBody" cols="30"
