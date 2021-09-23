@@ -55,7 +55,7 @@
                                 <label for="form-label" class="my-2">Categorias</label>
                                 <select class="form-control" id="categories" name="category">
                                     @foreach($categories ?? '' as $category)
-                                    <option value="{{$category->id}}"
+                                    <option class="body" value="{{$category->id}}"
                                         {{old('category') == $category->id ? 'selected' : ''}}>{{$category->name}}
                                     </option>
                                     @endforeach

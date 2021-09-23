@@ -3,29 +3,31 @@
     @foreach($ads as $ad)
     <div class="col-12 col-md-4 my-5 d-flex justify-content-around container-fluid">
 
-        <div class="card" style="width: 18rem;">
+        <div class="card " style="width: 18rem;">
         
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
 
                     @foreach ($ad->images as $image)
                     <div class="carousel-item @if($loop->first)active @endif">
-                        <img src="{{$image->getUrl(300,150)}}" class=" d-block w-100" alt="...">
+                        <img src="{{$image->getUrl(300,150)}}" class=" d-block w-100 " alt="...">
                     </div>
-                    @endforeach
-                </div>
-                
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    
+                    <button class="carousel-control" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="carousel-control" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                <button class="carousel-control" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="carousel-control" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-              
+                @endforeach
+                </div>
+               
+                
+             
             </div>
             
             <div class="card-body">
