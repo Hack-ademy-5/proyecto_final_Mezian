@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Storage;
+use App\Jobs\GoogleVisionSafeLabelImage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 
 
 
@@ -79,6 +81,8 @@ public function createAd (AdRequest $request)
         $i->file = $newFilePath;
         $i->ad_id = $a->id;
         $i->save();
+        dispatch(new GoogleVisionSafeSearchImage($i->id));
+        dispatch(new GoogleVisionSafeLabelImage($i->id));
     }
     File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
 

@@ -52,36 +52,55 @@
                     </div>
                     @foreach ($ad->images as $image)
                     <div class="row justify-content-around">
-                        
-                        <div class="col-md-9">
-                        <img src="{{ $image->getUrl(300,150)}}" class="img-fluid" alt="" >
+
+                        <div class="col-md-4">
+                            <img src="{{ $image->getUrl(300,150)}}" class="img-fluid" alt="">
                         </div>
-                    </div>
-                    @endforeach
-                    <hr>
-                    <div class="row d-flex justify-content-end">
-                        <div class="col-md-6">
-                            <form action="{{route('revisor.ad.reject',['id'=>$ad->id])}}" method="POST">
-                                @csrf
-                                <button type="submit" class="btn btn-danger">Rechazar</button>
-                            </form>
+
+
+                        <div class="col-md-8">
+                            Adult : {{ $image->adult}} <br>
+                            spoof : {{ $image->spoof}} <br>
+                            medical : {{ $image->medical}} <br>
+                            violence : {{ $image->violence}} <br>
+                            racy : {{ $image->racy}} <br>
+                            <b>Labels</b><br>
+                            <ul>
+                                @if ($image->labels)
+                                @foreach ($image->labels as $label)
+                                <li>{{$label}}</li>
+                                @endforeach
+                                @endif
+                            </ul>
+                            {{ $image->id}} <br>
+                            {{ $image->file}} <br>
+                            {{ Storage:: url($image->file)}} <br>
                         </div>
-                        <div class="col-md-6 text-right">
-                            <form action="{{route('revisor.ad.accept',['id'=>$ad->id])}}" method="POST">
-                                @csrf
-                                <button type="submit" class="btn btn-success">Aceptar</button>
-                            </form>
+                        @endforeach
+                        <hr>
+                        <div class="row d-flex justify-content-end">
+                            <div class="col-md-6">
+                                <form action="{{route('revisor.ad.reject',['id'=>$ad->id])}}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Rechazar</button>
+                                </form>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <form action="{{route('revisor.ad.accept',['id'=>$ad->id])}}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-success">Aceptar</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
-</div>
+    @else
+    <h3 class="text-center"> no hay anuncios para revisar </h3>
 
-@else
-<h3 class="text-center"> no hay anuncios para revisar </h3>
-
-@endif
-@endsection
+    @endif
+    @endsection
