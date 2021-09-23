@@ -53,29 +53,31 @@
                     @foreach ($ad->images as $image)
                     <div class="row justify-content-around">
 
-                        <div class="col-md-4">
-                            <img src="{{ $image->getUrl(300,150)}}" class="img-fluid" alt="">
+                        <div class="col-md-5 my-4">
+                            <img src="{{ $image->getUrl(300,150)}}" class="img-fluid" alt=""><br><br>
+                        
+                            <h7> Adult : {{ $image->adult}} <br>
+                                spoof : {{ $image->spoof}} <br>
+                                medical : {{ $image->medical}} <br>
+                                violence : {{ $image->violence}} <br>
+                                racy : {{ $image->racy}} <br></h7>
+
+
+                        </div>
+
+                        <div class="col-md-4 my-4  ">
+                            
+                            <h4 class="text-center">Labels</h4>
+                                   <ul>
+                                        @if ($image->labels)
+                                        @foreach ($image->labels as $label)
+                                        <li>{{$label}}</li>
+                                        @endforeach
+                                        @endif
+                                    </ul>
                         </div>
 
 
-                        <div class="col-md-8">
-                            Adult : {{ $image->adult}} <br>
-                            spoof : {{ $image->spoof}} <br>
-                            medical : {{ $image->medical}} <br>
-                            violence : {{ $image->violence}} <br>
-                            racy : {{ $image->racy}} <br>
-                            <b>Labels</b><br>
-                            <ul>
-                                @if ($image->labels)
-                                @foreach ($image->labels as $label)
-                                <li>{{$label}}</li>
-                                @endforeach
-                                @endif
-                            </ul>
-                            {{ $image->id}} <br>
-                            {{ $image->file}} <br>
-                            {{ Storage:: url($image->file)}} <br>
-                        </div>
                         @endforeach
                         <hr>
                         <div class="row d-flex justify-content-end">
