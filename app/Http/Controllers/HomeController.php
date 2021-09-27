@@ -110,7 +110,7 @@ public function uploadImages(Request $request)
     
   $uniqueSecret = $request->input('uniqueSecret');
   $filePath = $request->file('file')->store("public/temp/{$uniqueSecret}");
-  dispatch(new ResizeImage($filePath,120,120));
+  
   session()->push("images.{$uniqueSecret}", $filePath);
    
    return response()->json(
