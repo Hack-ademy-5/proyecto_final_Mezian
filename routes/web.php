@@ -45,4 +45,6 @@ Route::delete('/ad/images/remove', [HomeController::class,'removeImages'])->name
 
 Route::get('/ad/images', [HomeController::class,'getImages'])->name('ad.images');
 
+Route::get('/search', [PublicController::class,'search'])->name('search');
+
 Route::get('/ad/{id}', [HomeController::class,'details'])->name("ad.details");
