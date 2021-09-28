@@ -11295,6 +11295,29 @@ i {
   font-family: "Open Sans", sans-serif;
 }
 
+.rounded1 {
+  border-radius: 1rem;
+}
+
+.price {
+  color: rgba(255, 0, 0, 0.89);
+}
+
+.bodytext {
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+}
+
+.scrolled-down {
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+}
+
+.scrolled-up {
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+
 .flag-icon-background, .flag-icon {
   background-size: contain;
   background-position: 50%;
@@ -13516,30 +13539,3 @@ i {
   border-right: 6px solid transparent;
   border-bottom: 6px solid #be2626;
 }
-
-.detalles{
-
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-  border:none;
-
-}
-
-.rounded1{
-
-  border-radius: 1rem;
-
-}
-
-.price{
-
-color: rgba(255, 0, 0, 0.89);
-
-
-}
-
-.bodytext {
-
-  font-weight: bold;
-  font-family: "Open Sans", sans-serif;
-}
-

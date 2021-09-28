@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light1">
+<nav class="navbar autohide navbar-expand-lg navbar-light bg-light1 sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('home') }}">Proyectofinal.es</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -110,3 +110,4 @@
         </div>
     </div>
 </nav>
+
