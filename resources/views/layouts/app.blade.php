@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>ProyectoFinal</title>
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -66,9 +66,10 @@
                 e.preventDefault();
                 const form = document.getElementById('logoutForm').submit();
             });
+
         }
 
-        
+     
  </script>
 
 </body>

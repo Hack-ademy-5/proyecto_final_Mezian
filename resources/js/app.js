@@ -27,5 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     // if
   
-  }); 
+}); 
+
+
   // DOMContentLoaded  end

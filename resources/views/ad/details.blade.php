@@ -51,13 +51,12 @@
                         </div>
 
                         <div class="col-6 my-5">
-                        <h6> {{__('ui.categoria')}}: <a
-                        href="{{route('category.ads',['name'=>$ad->category->name,'id'=>$ad->category->id])}}">{{$ad->category->name}}</a><h6> 
+                        <h6> {{__('ui.categoria')}}: <a href="{{route('category.ads',['name'=>$ad->category->name,'id'=>$ad->category->id])}}"><button type="button" class="btn btn-light btn-xs">{{$ad->category->name}}</button></a><h6> 
                                     
                     </div>
                     <div class="col-6 my-5 text-end ">
                        
-                        <a href="{{route("home")}}">volver atras</a>
+                        <a href="{{route("home")}}"><button type="button" class="btn btn-dark ">volver atras</button></a>
                         <br>
                         <br> 
                         <h6><i>Anuncio creado por {{ $ad->user->name }} <br> {{$ad->created_at->format('d/m/Y')}}</i></h6>                       

@@ -44,9 +44,20 @@
                 @include('layouts._locale',["lang"=>'it','nation'=>'it'])
 
 
+
             </ul>
 
             <ul class="navbar-nav ">
+
+                <li class="nav-item">
+
+                    <form action="{{ route('search') }}" method="GET" class="d-flex">
+                        <input class="form-control me-2" type="text" name="q" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit">Search</button>
+                    </form>
+
+                </li>
+
 
                 @guest
                 @if (Route::has('login'))
@@ -64,14 +75,6 @@
                 @else
 
 
-                <li class="nav-item">
-
-<form action="{{ route('search') }}" method="GET" class="d-flex">
-    <input class="form-control me-2" type="text" name="q" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-</form>
-
-</li>
 
                 <li class="nav-item">
                     <form id="logoutForm" action="{{route('logout')}}" method="POST">
@@ -80,7 +83,7 @@
                     <a id="logoutBtn" class="nav-link" href="#">{{__('ui.logout')}}</a>
                 </li>
 
-             
+
 
 
                 @auth
@@ -110,4 +113,3 @@
         </div>
     </div>
 </nav>
-
