@@ -50,7 +50,12 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return $this->role == 'admin' ? true : false;
+        return strtolower($this->role) == 'admin' ? true : false;
+    }
+
+    public function isRevisor()
+    {
+        return strtolower($this->role) == 'revisor' ? true : false;
     }
 
 }
