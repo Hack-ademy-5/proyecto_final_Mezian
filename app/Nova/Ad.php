@@ -4,10 +4,12 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\BelongsTo;
 use PhpParser\Node\Expr\Cast\Bool_;
@@ -53,6 +55,13 @@ class Ad extends Resource
             TextArea::make(__('Texto'),'body'),
             Number::make(__('Precio'),'price')->min(1)->max(1000)->step(1),
             Boolean::make(__('Aceptado'),'is_accepted'),
+            Date::make(__('Creado el'),'created_at')
+                ->format('DD/MM/YYYY')
+                ->pickerDisplayFormat('d/m/Y'),
+            DateTime::make(__('Acutalizado el'),'updated_at')
+                ->format('DD/MM/YYYY HH:mm:ss')
+                ->pickerDisplayFormat('d/m/Y H:i:S')
+                ->hideWhenCreating(),
             BelongsTo::make(__('Categoria'),'category',Category::class),
             BelongsTo::make(__('Usuario'),'user',User::class)
         ];
