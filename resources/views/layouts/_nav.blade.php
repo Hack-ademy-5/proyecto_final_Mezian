@@ -87,7 +87,7 @@
 
 
                 @auth
-                @if (Auth::user()->is_revisor)
+                @if (Auth::user()->isRevisor())
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('revisor') }}">
                         Revisor Casa
