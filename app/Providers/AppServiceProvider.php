@@ -28,13 +28,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         
-  if(Schema::hasTable('categories'))  
- View::share('categories', Category::all());
     try {
       $categories= Category::all();
       View::share('categories', $categories);
      } catch (\Throwable $th) {
-      
+      dump("Acuerdate de crear un db y lanzar las migrations");
     }
        Paginator::useBootstrap();
     }
