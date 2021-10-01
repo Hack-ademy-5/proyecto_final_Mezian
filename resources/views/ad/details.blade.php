@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="col-6 my-5">
-                        <h6> {{__('ui.categoria')}}: <a href="{{route('category.ads',['name'=>$ad->category->name,'id'=>$ad->category->id])}}"><button type="button" class="btn btn-light btn-xs">{{$ad->category->name}}</button></a><h6> 
+                        <h6> {{__('ui.categoria')}}: <a href="{{route('category.ads',['name'=>$ad->category->name,'id'=>$ad->category->id])}}"><button type="button" class="btn btn-outline-dark btn-xs">{{$ad->category->name}}</button></a><h6> 
                                     
                     </div>
                     <div class="col-6 my-5 text-end ">
