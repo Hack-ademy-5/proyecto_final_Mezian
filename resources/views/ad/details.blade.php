@@ -47,7 +47,7 @@
                         <h2 class ="price">{{$ad->price}} €</h2>
                         </div>
                         <div class="col-12 my-2">
-                        <h7 class= "bodytext">{{$ad->body}}</h7>
+                        <h7 class= "bodytext">{!!$ad->body!!}</h7>
                         </div>
 
                         <div class="col-6 my-5">
