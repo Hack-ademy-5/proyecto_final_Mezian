@@ -14,6 +14,7 @@ use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\BelongsTo;
 use PhpParser\Node\Expr\Cast\Bool_;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Waynestate\Nova\CKEditor;
 
 class Ad extends Resource
 {
@@ -52,7 +53,15 @@ class Ad extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Titulo'),'title'),
             TextArea::make(__('Descripción'),'description')->alwaysShow(),
-            TextArea::make(__('Texto'),'body'),
+            CKEditor::make(__('Texto'),'body')->options([
+                'height'=>200,
+                'toolbar'=>[
+                    ['Source', '-', 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Print', 'SpellChecker', 'Scayt'],
+                    ['Undo', 'Redo', '-', 'Find', 'Replace', '-', 'SelectAll', 'RemoveFormat'],
+                    ['JustifyLeft', 'JustifyCenter', 'JustifyRight'],
+                    ['Link', 'Unlink', 'Anchor'],
+                ]
+            ]),
             Number::make(__('Precio'),'price')->min(1)->max(1000)->step(1),
             Boolean::make(__('Aceptado'),'is_accepted'),
             Date::make(__('Creado el'),'created_at')
