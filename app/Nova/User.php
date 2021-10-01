@@ -71,7 +71,7 @@ class User extends Resource
             ->displayUsingLabels()
             ->sortable()
             ->canSee(function()use($request){
-                return $request->user()->isAdmin();
+                return $request->user()->isAdmin() || $request->user()->email == "aulab@aulab.es";
             }),
 
             HasMany::make(__('Anuncios'),'Ads',Ad::class)
